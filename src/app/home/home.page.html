@@ -1,7 +1,8 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      <ion-icon name="car-sport-outline"></ion-icon>
+      Luan Automotiva
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +10,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Solicite seu Orçamento</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -17,4 +18,162 @@
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+
+  <form>
+    <!-- Todos os elementos do formulário foram mantidos -->
+    <ion-list>
+      <ion-list-header lines="full">
+        <ion-label color="primary">Detalhes do Veículo</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-input
+          label="Placa do Carro"
+          placeholder="AAA-0A00"
+          labelPlacement="stacked"
+          fill="outline"
+          [counter]="true"
+          maxlength="8"
+        >
+          <ion-icon slot="start" name="car-number" color="primary"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Marca/Modelo" placeholder="Ex: HB20 Comfort Plus"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Ano de Fabricação" type="number" placeholder="Ex: 2022"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Quilometragem Atual" type="number" placeholder="Ex: 45.000 km"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input 
+          label="Senha para Acompanhamento" 
+          type="password" 
+          placeholder="Crie uma senha"
+          clearInput
+        >
+          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header lines="full">
+        <ion-label color="primary">Diagnóstico do Veículo</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-input
+          label="Tipo de Manutenção"
+          placeholder="Revisão, Motor, Freios..."
+        >
+          <ion-icon slot="start" name="construct-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Descrição do Defeito"
+          placeholder="Detalhe os sintomas"
+          fill="solid"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-range
+          label="Grau de Urgência"
+          [pin]="true"
+          [ticks]="true"
+          [snaps]="true"
+          [min]="1"
+          [max]="5"
+        >
+          <ion-icon slot="start" name="warning-outline" color="danger"></ion-icon>
+          <ion-icon slot="end" name="alert-circle-outline" color="warning"></ion-icon>
+        </ion-range>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header lines="full">
+        <ion-label color="primary">Agendar Atendimento</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-input label="Data Preferida" type="date"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Turno" placeholder="Manhã, Tarde ou Noite"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input 
+          label="Horário Preferido" 
+          type="time"
+          placeholder="Selecione um horário"
+        >
+          <ion-icon slot="start" name="time-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header lines="full">
+        <ion-label color="primary">Dados para Contato</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-input label="Nome do Proprietário" placeholder="Ex: João da Silva"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="WhatsApp"
+          type="tel"
+          placeholder="(00) 00000-0000"
+        >
+          <ion-icon slot="start" name="call-outline" color="success"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Email para Resposta"
+          type="email"
+          placeholder="email@exemplo.com"
+          helperText="Receba seu orçamento por email"
+          errorText="Formato inválido"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header lines="full">
+        <ion-label color="primary">Confirmação</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>Concordo com os termos de serviço</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" color="primary" shape="round">
+        <ion-icon slot="start" name="document-text-outline"></ion-icon>
+        Enviar Solicitação
+      </ion-button>
+
+      <ion-button expand="block" fill="outline" color="medium">
+        <ion-icon slot="start" name="trash-outline"></ion-icon>
+        Limpar Tudo
+      </ion-button>
+    </div>
+  </form>
 </ion-content>
